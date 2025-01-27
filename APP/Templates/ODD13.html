@@ -1,0 +1,1250 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <link rel="shortcut icon" href="{{ url_for('static', filename='assets/img/logoOdd.png')}}" />
+    <link
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="{{ url_for('static', filename='assets/img/logoOdd.png')}}"
+    />
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.css"
+    />
+    <script src="script.js"></script>
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='assets/vendor/@fortawesome/fontawesome-free/css/all.min.css')}}"
+    />
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/styles/tailwind.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/styles/content.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/styles/dashboard.css') }}">
+    <title>Un Guide pour un Développement Durable.</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+  </head>
+
+  
+  <body class="text-blueGray-700 antialiased">
+    <div id="root">
+      <nav
+      class="md:left-0 md:block md:fixed md:top-0 md:bottom-0 md:overflow-y-auto md:flex-row md:flex-nowrap md:overflow-hidden shadow-xl bg-white flex flex-wrap items-center justify-between relative md:w-64 z-10 py-4 px-6"
+    >
+      <div
+        class="md:flex-col md:items-stretch md:min-h-full md:flex-nowrap px-0 flex flex-wrap items-center justify-between w-full mx-auto"
+      >
+      <button
+      class="cursor-pointer text-black opacity-50 md:hidden px-3 py-1 text-xl leading-none bg-transparent rounded border border-solid border-transparent"
+      type="button"
+      onclick="toggleNavbar('example-collapse-sidebar')"
+    >
+      <i class="fas fa-bars"></i>
+    </button>
+    <a
+    class="md:block text-left md:pb-2 text-blueGray-600 mr-0 inline-block whitespace-nowrap text-sm uppercase font-bold p-4 px-0"
+    href="{{ url_for('index') }}"
+  >
+        <center><a href="{{ url_for('index') }}"><img src="{{ url_for('static', filename='assets/img/R.jpeg')}}" alt=""></a></center>
+
+     
+        <ul class="md:hidden items-center flex flex-wrap list-none">
+          <li class="inline-block relative">
+    
+        
+          </li>
+      
+        </ul>
+        <div
+          class="md:flex md:flex-col md:items-stretch md:opacity-100 md:relative md:mt-4 md:shadow-none shadow absolute top-0 left-0 right-0 z-40 overflow-y-auto overflow-x-hidden h-auto items-center flex-1 rounded hidden"
+          id="example-collapse-sidebar"
+        >
+        <div
+        class="md:min-w-full md:hidden block pb-4 mb-4 border-b border-solid border-blueGray-200"
+      >
+        <div class="flex flex-wrap">
+          <div class="w-6/12">
+            <a
+              class="md:block text-left md:pb-2 text-blueGray-600 mr-0 inline-block whitespace-nowrap text-sm uppercase font-bold p-4 px-0"
+              href="{{ url_for('index') }}"
+              >
+            </a>
+          </div>
+          <div class="w-6/12 flex justify-end">
+            <button
+              type="button"
+              class="cursor-pointer text-black opacity-50 md:hidden px-3 py-1 text-xl leading-none bg-transparent rounded border border-solid border-transparent"
+              onclick="toggleNavbar('example-collapse-sidebar')"
+            >
+              <i class="fas fa-times"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+           
+            <!-- Divider -->
+            <hr class="my-4 md:min-w-full" />
+            <!-- Heading -->
+            <h6
+              class="md:min-w-full text-blueGray-500 text-xs uppercase font-bold block pt-1 pb-4 no-underline"
+            >
+            Pages d'accueil
+            </h6>
+            <!-- Navigation -->
+
+            <ul class="md:flex-col md:min-w-full flex flex-col list-none">
+              <li class="items-center">
+                <a
+                  href="{{ url_for('dashboard') }}"
+                  class="text-xs uppercase py-3 font-bold block text-blueGray-700 hover:text-blueGray-500"
+                >
+                  <i class="fas fa-tv mr-2 text-sm opacity-75"></i>
+                  TABLEAU DE BORD
+                </a>
+              </li>
+              <li class="items-center">
+                <a
+                  href="{{ url_for('tables') }}"
+                  class="text-xs uppercase py-3 font-bold block text-blueGray-700 hover:text-blueGray-500"
+                >
+                  <i class="fas fa-table mr-2 text-sm text-blueGray-300"></i>
+                  Importation  
+                </a>
+              </li>
+           
+            </ul>
+            <h6
+            class="md:min-w-full text-blueGray-500 text-xs uppercase font-bold block pt-1 pb-4 no-underline"
+          >
+          Les objectifs du développement durable
+          </h6>
+          <!-- Navigation -->
+
+          <ul class="md:flex-col md:min-w-full flex flex-col list-none">
+          
+            <li class="items-center">
+              <a
+                href="{{ url_for('ODD13') }}"
+                class="text-xs uppercase py-3 font-bold block text-pink-500 hover:text-pink-600"
+              >
+                <i class="fas fa-newspaper text-blueGray-300 mr-2 text-sm"></i>
+                changements climatiques
+              </a>
+            </li>
+            <li class="items-center">
+              <a
+                href="{{ url_for('ODD14') }}"
+                class="text-xs uppercase py-3 font-bold block text-blueGray-700 hover:text-blueGray-500"
+              >
+                <i class="fas fa-newspaper text-blueGray-300 mr-2 text-sm"></i>
+                Vie aquatique
+              </a>
+            </li>
+            <li class="items-center">
+              <a
+                href="{{ url_for('ODD15') }}"
+                class="text-xs uppercase py-3 font-bold block text-blueGray-700 hover:text-blueGray-500"
+              >
+                <i class="fas fa-newspaper text-blueGray-300 mr-2 text-sm"></i>
+                Vie terrestre
+              </a>
+            </li>
+            <li class="items-center">
+              <a
+                href="{{ url_for('ODD16') }}"
+                class="text-xs uppercase py-3 font-bold block text-blueGray-700 hover:text-blueGray-500"
+              >
+                <i class="fas fa-newspaper text-blueGray-300 mr-2 text-sm"></i>
+                Paix, justice
+              </a>
+            </li>
+            <li class="items-center">
+              <a
+                href="{{ url_for('ODD17') }}"
+                class="text-xs uppercase py-3 font-bold block text-blueGray-700 hover:text-blueGray-500"
+              >
+                <i class="fas fa-newspaper text-blueGray-300 mr-2 text-sm"></i>
+                Partenariats pour la réalisation des objectifs
+              </a>
+            </li>
+         
+          </ul>
+            <!-- Divider -->
+            <hr class="my-4 md:min-w-full" />
+            <!-- Heading -->
+            <h6
+              class="md:min-w-full text-blueGray-500 text-xs uppercase font-bold block pt-1 pb-4 no-underline"
+            >
+            PAGES DE DISPOSITION D'AUTORISATION
+            </h6>
+            <!-- Navigation -->
+
+            <ul
+              class="md:flex-col md:min-w-full flex flex-col list-none md:mb-4"
+            >
+              <li class="items-center">
+                <ul class="md:flex-col md:min-w-full flex flex-col list-none">
+                  <li class="items-center">
+                    <a
+                      href="{{ url_for('login') }}"
+                      class="text-blueGray-700 hover:text-blueGray-500 text-xs uppercase py-3 font-bold block"
+                    >
+                      <i
+                        class="fas fa-fingerprint text-blueGray-300 mr-2 text-sm"
+                      ></i>
+                      Login
+                    </a>
+                  </li>
+                  <li class="items-center">
+                    <a
+                    href="{{ url_for('index') }}"
+                    class="text-xs uppercase py-3 font-bold block text-blueGray-700 hover:text-blueGray-500"
+                  >
+                    <i class="fas fa-home mr-2 text-sm text-blueGray-300"></i>
+                    Home
+                  </a>
+                  </li>
+                </ul>
+                
+              
+                
+            
+          </div>
+        </div>
+      </nav>
+
+
+      
+      <div class="relative md:ml-64 bg-blueGray-50">
+        <nav
+          class="absolute top-0 left-0 w-full z-10 bg-transparent md:flex-row md:flex-nowrap md:justify-start flex items-center p-4"
+        >
+          <div
+            class="w-full mx-autp items-center flex justify-between md:flex-nowrap flex-wrap md:px-10 px-4"
+          >
+          <a
+          class="text-white text-sm uppercase hidden lg:inline-block font-semibold"
+          href="{{ url_for('dashboard') }}"
+        >
+        Mesures relatives à la lutte contre les changements climatiques
+        </a>
+            
+            <form
+              class="md:flex hidden flex-row flex-wrap items-center lg:ml-auto mr-3"
+            >
+            <div class="relative flex w-full flex-wrap items-stretch">
+              <a href="https://docs.google.com/forms/d/e/1FAIpQLSdQMmVFBzZcrapYnwMh-eE_PbHrwWa-dqncvIH-j48HtiEsRw/viewform?usp=sf_link" class="button-link">
+                <i class="fab fa-google"></i> Questionnaire des odd
+            </a>
+            
+            <style>
+                .button-link {
+                    display: inline-block;
+                    padding: 10px 20px;
+                    background-color: #ffffff;
+                    color: rgb(0, 0, 0);
+                    text-align: center;
+                    text-decoration: none;
+                    border-radius: 5px;
+                    transition: background-color 0.3s, transform 0.3s;
+                    box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+                }
+            
+                .button-link:hover {
+                    background-color: #e6f9fd;
+                    transform: translateY(-1px);
+                    box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+                }
+            
+                .button-link:focus {
+                    outline: none;
+                }
+            
+                /* Optional: Adjust hover and focus effects for accessibility */
+                .button-link:hover, .button-link:focus {
+                    background-color: #3367D6;
+                    color: #ffffff;
+                    transform: translateY(-1px);
+                    box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+                }
+            </style>
+            
+            
+          </div>
+            </form>
+            <ul
+              class="flex-col md:flex-row list-none items-center hidden md:flex"
+            >
+              <a
+                class="text-blueGray-500 block"
+                onclick="openDropdown(event,'user-dropdown')"
+              >
+                <div class="items-center flex">
+                  <span
+                    class="w-12 h-12 text-sm text-white bg-blueGray-200 inline-flex items-center justify-center rounded-full"
+                    ><img
+                      
+                      src="{{ url_for('static', filename='assets/img/13.png') }}"
+                      /></span>
+                </div>
+              </a>
+              <div
+                class="hidden bg-white text-base z-50 float-left py-2 list-none text-left rounded shadow-lg min-w-48"
+                id="user-dropdown"
+              >
+                <a
+                  href="#pablo"
+                  class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
+                  >Action</a
+                ><a
+                  href="#pablo"
+                  class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
+                  >Another action</a
+                ><a
+                  href="#pablo"
+                  class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
+                  >Something else here</a
+                >
+                <div
+                  class="h-0 my-2 border border-solid border-blueGray-100"
+                ></div>
+                <a
+                  href="#pablo"
+                  class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
+                  >Seprated link</a
+                >
+              </div>
+            </ul>
+          </div>
+        </nav>
+        <!-- Header -->
+        <div class="relative bg-pink-600 md:pt-32 pb-32 pt-12">
+          <div class="px-4 md:px-10 mx-auto w-full">
+            <div>
+              <!-- Card stats -->
+              <div class="flex flex-wrap">
+                <div class="w-full lg:w-6/12 xl:w-3/12 px-4">
+                  <div
+                    class="relative flex flex-col min-w-0 break-words bg-white rounded mb-6 xl:mb-0 shadow-lg"
+                  >
+                    <div class="flex-auto p-4">
+                      <div class="flex flex-wrap">
+                        <div
+                          class="relative w-full pr-4 max-w-full flex-grow flex-1"
+                        >
+                          <h5
+                            class="text-blueGray-400 uppercase font-bold text-xs"
+                          >
+                          Âge moyen 
+                          </h5>
+                          <span class="font-semibold text-xl text-blueGray-700">
+                            {{ average_age }} Ans
+                          </span>
+                        </div>
+                        <div class="relative w-auto pl-4 flex-initial">
+                          <div
+                            class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 shadow-lg rounded-full bg-red-500"
+                          >
+                            <i class="far fa-chart-bar"></i>
+                          </div>
+                        </div>
+                      </div>
+                      <p class="text-sm text-blueGray-400 mt-4">
+                        <span class="text-emerald-500 mr-2">
+                          <i class="fas fa-arrow-up"></i> {{max_age}} Ans
+                          <span class="text-orange-500 mr-2">
+                          <i class="fas fa-arrow-down"></i> {{min_age}}Ans
+                          </span>
+                        
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="w-full lg:w-6/12 xl:w-3/12 px-4">
+                  <div
+                    class="relative flex flex-col min-w-0 break-words bg-white rounded mb-6 xl:mb-0 shadow-lg"
+                  >
+                    <div class="flex-auto p-4">
+                      <div class="flex flex-wrap">
+                        <div
+                          class="relative w-full pr-4 max-w-full flex-grow flex-1"
+                        >
+                          <h5
+                            class="text-blueGray-400 uppercase font-bold text-xs"
+                          >
+                          les participants
+                          </h5>
+                          <span class="font-semibold text-xl text-blueGray-700">
+                            {{ average_personnes }}
+                            
+                          </span>
+                        </div>
+                        <div class="relative w-auto pl-4 flex-initial">
+                          <div
+                            class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 shadow-lg rounded-full bg-orange-500"
+                          >
+                            <i class="fas fa-chart-pie"></i>
+                          </div>
+                        </div>
+                      </div>
+                      <p class="text-sm text-blueGray-400 mt-4">
+                        <span class="text-emerald-500 mr-2">
+                          <i class="fas fa-arrow-up"></i> {{charmin}}  
+                          <span class="text-orange-500 mr-2">
+                          <i class="fas fa-arrow-down"></i> {{charmax}}
+                          </span>
+                        </span>
+                       
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="w-full lg:w-6/12 xl:w-3/12 px-4">
+                  <div
+                    class="relative flex flex-col min-w-0 break-words bg-white rounded mb-6 xl:mb-0 shadow-lg"
+                  >
+                    <div class="flex-auto p-4">
+                      <div class="flex flex-wrap">
+                        <div
+                          class="relative w-full pr-4 max-w-full flex-grow flex-1"
+                        >
+                          <h5
+                            class="text-blueGray-400 uppercase font-bold text-xs"
+                          >
+                          Ville majeure
+                          </h5>
+                          <span class="font-semibold text-xl text-blueGray-700">
+                            {{top_cities}}
+                           
+                                                      
+                          </span>
+                        </div>
+                        <div class="relative w-auto pl-4 flex-initial">
+                          <div
+                            class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 shadow-lg rounded-full bg-pink-500"
+                          >
+                            <i class="fas fa-users"></i>
+                          </div>
+                        </div>
+                      </div>
+                      <p class="text-sm text-blueGray-400 mt-4">
+                        <span class="text-emerald-500 mr-2">
+                          <i class="fas fa-arrow-up"></i>  {{average_cities}}%
+                        </span>
+                        <span class="whitespace-nowrap"> Since yesterday </span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="w-full lg:w-6/12 xl:w-3/12 px-4">
+                  <div
+                    class="relative flex flex-col min-w-0 break-words bg-white rounded mb-6 xl:mb-0 shadow-lg"
+                  >
+                    <div class="flex-auto p-4">
+                      <div class="flex flex-wrap">
+                        <div
+                          class="relative w-full pr-4 max-w-full flex-grow flex-1"
+                        >
+                          <h5
+                            class="text-blueGray-400 uppercase font-bold text-xs"
+                          >
+                           Qualité de vie
+                          </h5>
+                          <span class="font-semibold text-xl text-blueGray-700">
+                            {{average_quality}}% 
+                          </span>
+                          
+                        </div>
+                        <div class="relative w-auto pl-4 flex-initial">
+                          <div
+                            class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 shadow-lg rounded-full bg-lightBlue-500"
+                          >
+                            <i class="fas fa-percent"></i>
+                          </div>
+                        </div>
+                      </div>
+                      <p class="text-sm text-blueGray-400 mt-4">
+                        <span class="text-emerald-500 mr-2">
+                          <i class="fas fa-arrow-up"></i> {{percentage_oui}} % Oui 
+                          <span class="text-orange-500 mr-2">
+                          <i class="fas fa-arrow-down"></i> {{percentage_non}}% Non
+                          </span>
+                        </span>
+                      
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+       
+    
+
+ 
+
+<!-- Content -->
+<div class="mt-2">
+  <!-- State cards -->
+  <div class="grid grid-cols-1 gap-8 p-4 lg:grid-cols-2 xl:grid-cols-4">
+    <!-- Value card -->
+   
+
+  <!-- Charts -->
+  <div class="grid grid-cols-1 p-4 space-y-8 lg:gap-8 lg:space-y-0 lg:grid-cols-3">
+    <!-- Bar chart card -->
+    <div class="col-span-2 bg-white rounded-md dark:bg-t" x-data="{ isOn: false }">
+      <!-- Card header -->
+      <div class="flex items-center justify-between p-4 border-b dark:border-primary">
+        <h4 class="text-lg font-semibold text-gray-500 dark:text-light">  la relation entre la prise de mesures contre les effets des changements climatiques et l'observation d'une augmentation des températures
+        </h4>
+        <div class="flex items-center space-x-2">
+          <span class="text-sm text-gray-500 dark:text-light">dernières années</span>
+         
+        </div>
+      </div>
+      <!-- Chart -->
+      <div class="parent-container">
+      <div class="relative ">
+        <canvas id="myLineChart" class="chart-canvas"></canvas>
+<style>
+  .parent-container {
+    display: grid;
+}
+
+.chart-canvas {
+    width: 100% ; /* Set the canvas width to 100% of the parent div */
+    height: 100%; /* Set the canvas height to 100% of the parent div */
+}
+</style>        
+      </div>
+    </div>
+  </div>
+  
+
+ 
+  
+    <!-- Doughnut chart card -->
+    <div class="bg-white rounded-md dark:bg-darker" x-data="{ isOn: false }">
+      <!-- Card header -->
+      <div class="flex items-center justify-between p-4 border-b dark:border-primary">
+        <h4 class="text-lg font-semibold text-gray-500 dark:text-light"> Connaissance des politiques gouvernementales 
+
+        </h4>
+        <div class="flex items-center">
+          <button
+            class="relative focus:outline-none"
+            x-cloak
+            @click="isOn = !isOn; $parent.updateDoughnutChart(isOn)"
+          >
+            <div
+              class="w-12 h-6 transition rounded-full outline-none bg-primary-100 dark:bg-primary-darker"
+            ></div>
+            <div
+              class="absolute top-0 left-0 inline-flex items-center justify-center w-6 h-6 transition-all duration-200 ease-in-out transform scale-110 rounded-full shadow-sm"
+              :class="{ 'translate-x-0  bg-white dark:bg-primary-100': !isOn, 'translate-x-6 bg-primary-light dark:bg-primary': isOn }"
+            ></div>
+          </button>
+        </div>
+      </div>
+      <!-- Chart -->
+      <div class="relative p-4 h-72">
+        <canvas id="doughnut-chart" width="400" height="400"></canvas>
+      </div>
+      
+    </div>
+  </div>
+
+  <!-- Two grid columns -->
+  <div class="grid grid-cols-1 p-4 space-y-8 lg:gap-8 lg:space-y-0 lg:grid-cols-3">
+    <!-- Active users chart -->
+    <div class="col-span-1 bg-white rounded-md dark:bg-darker">
+      <!-- Card header -->
+      <div class="p-4 border-b dark:border-primary">
+        <h4 class="text-lg font-semibold text-gray-500 dark:text-light">Participation à des activités de sensibilisation</h4>
+      </div>
+   
+      <!-- Chart -->
+     
+      <div class="parent-container">
+        <div class="relative ">
+          <canvas id="myBarChart" class="chart-canvas"></canvas>
+  <style>
+    .parent-container {
+      display: grid;
+  }
+  
+  .chart-canvas {
+      width: 100% ; /* Set the canvas width to 100% of the parent div */
+      height: 320px; /* Set the canvas height to 100% of the parent div */
+  }
+  </style>        
+        </div>
+      </div>
+       
+
+      
+    </div>
+
+    <!-- Line chart card -->
+    <div class="col-span-2 bg-white rounded-md dark:g-darker" x-data="{ isOn: false }">
+      <!-- Card header -->
+      <div class="flex items-center justify-between p-4 border-b dark:border-primary">
+        <h4 class="text-lg font-semibold text-gray-500 dark:text-light"> la fréquence des différentes pratiques environnementales</h4>
+        <div class="flex items-center">
+          <button
+            class="relative focus:outline-none"
+            x-cloak
+            @click="isOn = !isOn; $parent.updateLineChart()"
+          >
+            <div
+              class="w-12 h-6 transition rounded-full outline-none bg-primary-100 dark:bg-primary-darker"
+            ></div>
+            <div
+              class="absolute top-0 left-0 inline-flex items-center justify-center w-6 h-6 transition-all duration-200 ease-in-out transform scale-110 rounded-full shadow-sm"
+              :class="{ 'translate-x-0  bg-white dark:bg-primary-100': !isOn, 'translate-x-6 bg-primary-light dark:bg-primary': isOn }"
+            ></div>
+          </button>
+        </div>
+      </div>
+      <!-- Chart -->
+      <div class="relative hhh">
+        <canvas id="bar-chart"></canvas>
+     
+      </div>
+    </div>
+  </div>
+</div>
+  <div
+    class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded"
+  >
+    <div class="rounded-t mb-0 px-4 py-3 border-0">
+      <div class="flex flex-wrap items-center">
+        <div
+          class="relative w-full px-4 max-w-full flex-grow flex-1"
+        >
+          <h3 class="font-semibold text-base text-blueGray-700">
+            Les statistiques descriptives de base : Appareils électroniques en veille
+                    </h3>
+        </div>
+      
+      </div>
+    </div>
+    <div class="block w-full overflow-x-auto">
+      <!-- Projects table -->
+      <table
+        class="items-center w-full bg-transparent border-collapse"
+      >
+        <thead class="thead-light">
+          <tr>
+            <th
+              class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left"
+            >
+            Ville
+            </th>
+          
+       
+            <th
+              class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left min-w-140-px"
+            >
+             Minimum	</th>
+            <th
+            class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left min-w-140-px"
+           >
+           Maximum
+
+          </th>
+          <th
+            class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left min-w-140-px"
+           >
+            Moyenne
+
+          </th>
+          <th
+            class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left min-w-140-px"
+           >
+           Médiane
+
+          </th>
+          <th
+            class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left min-w-140-px"
+           >
+           Écart-type
+
+          </th>
+          <th
+            class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left min-w-140-px"
+           >
+           Variance
+
+          </th>
+          <th
+            class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left min-w-140-px"
+           >
+           1er Quartile
+
+          </th>
+          <th
+            class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left min-w-140-px"
+           >
+           Médian
+
+          </th>
+          <th
+          class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left min-w-140-px"
+         >
+         3ème Quartile
+
+        </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th
+              class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left"
+            >
+            Laâyoune
+            </th>
+            <td
+              class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+            >
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ stats_dict['Laâyoune'].Minimum }}
+            </td>
+            <td
+            class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+          >
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{ stats_dict['Laâyoune'].Maximum }}
+          </td>
+          <td
+          class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+        >
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{ stats_dict['Laâyoune'].Moyenne }}
+        </td>
+        <td
+        class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+      >
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{ stats_dict['Laâyoune'].Médiane }}
+      </td>
+      <td
+      class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+    >
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{ stats_dict['Laâyoune'].Écart }}
+    </td>
+    <td
+    class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+  >
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{ stats_dict['Laâyoune'].Variance }}
+  </td> <td
+  class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{ stats_dict['Laâyoune'].Quartile1}}
+</td> <td
+class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{ stats_dict['Laâyoune'].Médian}}
+</td> <td
+class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{ stats_dict['Laâyoune'].Quartile3 }}
+</td>  
+            
+          </tr>
+          
+          <tr>
+            <th
+              class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left"
+            >
+            Es-Smara
+            </th>
+        
+            <td
+              class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+            >
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ stats_dict['Es-Smara'].Minimum }}
+            </td>
+            <td
+            class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+          >
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{ stats_dict['Es-Smara'].Maximum }}
+          </td>
+          <td
+          class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+        >
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{ stats_dict['Es-Smara'].Moyenne }}
+        </td>
+        <td
+        class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+      >
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{ stats_dict['Es-Smara'].Médiane }}
+      </td>
+      <td
+      class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+    >
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{ stats_dict['Es-Smara'].Écart }}
+    </td>
+    <td
+    class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+  >
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{ stats_dict['Es-Smara'].Variance }}
+  </td> <td
+  class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{ stats_dict['Es-Smara'].Quartile1}}
+</td> <td
+class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{ stats_dict['Es-Smara'].Médian}}
+</td> <td
+class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{ stats_dict['Es-Smara'].Quartile3 }}
+</td>  
+          </tr>
+          <tr>
+            <th
+              class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left"
+            >
+            Boujdour
+            </th>
+            <td
+              class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+            >
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ stats_dict['Boujdour'].Minimum }}
+            </td>
+            <td
+            class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+          >
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{ stats_dict['Boujdour'].Maximum }}
+          </td>
+          <td
+          class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+        >
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{ stats_dict['Boujdour'].Moyenne }}
+        </td>
+        <td
+        class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+      >
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{ stats_dict['Boujdour'].Médiane }}
+      </td>
+      <td
+      class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+    >
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{ stats_dict['Boujdour'].Écart }}
+    </td>
+    <td
+    class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+  >
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{ stats_dict['Boujdour'].Variance }}
+  </td> <td
+  class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{ stats_dict['Boujdour'].Quartile1}}
+</td> <td
+class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{ stats_dict['Boujdour'].Médian}}
+</td> <td
+class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{ stats_dict['Boujdour'].Quartile3 }}
+</td> 
+          </tr>
+          <tr>
+            <th
+              class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left"
+            >
+            Tarfaya
+            </th>
+            
+            <td
+              class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+            >
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ stats_dict['Tarfaya'].Minimum }}
+            </td>
+            <td
+            class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+          >
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{ stats_dict['Tarfaya'].Maximum }}
+          </td>
+          <td
+          class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+        >
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{ stats_dict['Tarfaya'].Moyenne }}
+        </td>
+        <td
+        class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+      >
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{ stats_dict['Tarfaya'].Médiane }}
+      </td>
+      <td
+      class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+    >
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{ stats_dict['Tarfaya'].Écart }}
+    </td>
+    <td
+    class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+  >
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{ stats_dict['Tarfaya'].Variance }}
+  </td> <td
+  class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{ stats_dict['Tarfaya'].Quartile1}}
+</td> <td
+class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{ stats_dict['Tarfaya'].Médian}}
+</td> <td
+class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{ stats_dict['Tarfaya'].Quartile3 }}
+</td> 
+          </tr>
+        
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+          <footer class="block py-4">
+            <div class="container mx-auto px-4">
+              <hr class="mb-4 border-b-1 border-blueGray-200" />
+              <div
+                class="flex flex-wrap items-center md:justify-between justify-center"
+              >
+                <div class="w-full md:w-4/12 px-4">
+                  <div
+                    class="text-sm text-blueGray-500 font-semibold py-1 text-center md:text-left"
+                  >
+                    Copyright © <span id="get-current-year"></span>
+                    <a
+                      href="https://www.creative-tim.com?ref=njs-dashboard"
+                      class="text-blueGray-500 hover:text-blueGray-700 text-sm font-semibold py-1"
+                    >
+                    Haut-Commissariat au Plan du Maroc
+                    </a>
+                  </div>
+                </div>
+                <div class="w-full md:w-8/12 px-4">
+                  <ul
+                    class="flex flex-wrap list-none md:justify-end justify-center"
+                  >
+                    <li>
+                      <a
+                        href="https://www.hcp.ma/"
+                        class="text-blueGray-600 hover:text-blueGray-800 text-sm font-semibold block py-1 px-3"
+                      >
+                      HCP
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="{{ url_for('dashboard') }}"
+                        class="text-blueGray-600 hover:text-blueGray-800 text-sm font-semibold block py-1 px-3"
+                      >
+                      Tableau de bord
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="{{ url_for('tables') }}"
+                        class="text-blueGray-600 hover:text-blueGray-800 text-sm font-semibold block py-1 px-3"
+                      >
+                        Importation 
+                      </a>
+                    </li>
+                   
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </footer>
+        </div>
+      </div>
+    </div>
+    <script>
+      async function fetchData() {
+          const response = await fetch('/data');
+          const data = await response.json();
+          return data;
+      }
+
+      function processData(data) {
+          const labels = [];
+          const dataset = [];
+
+          data.forEach(item => {
+              const label = `T: ${item['Augmentation des températures']} - M: ${item['Mesures contre les changements climatiques']}`;
+              labels.push(label);
+              dataset.push(item.Count);
+          });
+
+          return { labels, dataset };
+      }
+
+      async function createLineChart() {
+          const data = await fetchData();
+          const processedData = processData(data);
+
+          const ctx = document.getElementById('myLineChart').getContext('2d');
+          new Chart(ctx, {
+              type: 'line',
+              data: {
+                  labels: processedData.labels,
+                  datasets: [{
+                      label: 'count',
+                      data: processedData.dataset,
+                      borderColor: 'rgba(75, 192, 192, 1)',
+                      borderWidth: 2,
+                      fill: false
+                  }]
+              },
+              options: {
+                
+                  scales: {
+                      y: {
+                          beginAtZero: true,
+                          grid : {
+                          color : '#c9c5c5'
+                        },
+                            ticks :{
+                              color : 'black'
+                            }
+                      },
+                      x:{
+                        grid : {
+                          color : '#c9c5c5'
+                        },
+                        ticks :{
+                              color : 'black'
+                             
+                            },
+                            title: {
+                                  display: true,
+                                  text: 'Augmentation des températures/ Mesures contre les changements climatiques'
+                              }
+                      }
+                      
+                      
+                  }
+              }
+          });
+      }
+
+      createLineChart();
+  </script>
+
+
+      
+
+<script>
+  // Fetch data from the Flask endpoint
+  fetch('/dt')
+      .then(response => response.json())
+      .then(data => {
+          // Extract bar chart data
+          const barData = JSON.parse(data.bar_data_json);
+
+          // Prepare data for Chart.js
+          const categories = barData.map(item => `${item['Transports durables']} / ${item['Tri et recyclage des déchets']}`);
+          const counts = barData.map(item => item['Frequency']);
+          const hoverText = barData.map(item => 
+              `Transports durables: ${item['Transports durables']}<br>` +
+              `Tri et recyclage des déchets: ${item['Tri et recyclage des déchets']}<br>` +
+              `Fréquence: ${item['Frequency']}`
+          );
+
+          const trace = {
+              x: categories,
+              y: counts,
+              type: 'bar',
+              text: hoverText,
+              hoverinfo: 'text'
+          };
+          // Render the bar chart
+          renderBarChart(categories, counts);
+      })
+      .catch(error => console.error('Error fetching data:', error));
+
+  // Function to render the bar chart using Chart.js
+  function renderBarChart(categories, counts) {
+      const ctx = document.getElementById('bar-chart').getContext('2d');
+      new Chart(ctx, {
+          type: 'bar',
+          data: {
+              labels: categories,
+              datasets: [{
+                  label: 'Fréquence',
+                  data: counts,
+                  backgroundColor: '#5870F8',
+                  borderColor: 'rgba(54, 162, 235, 1)',
+                  borderWidth: 1
+              }]
+          },
+          options: {
+            scales: {
+                      y: {
+                          beginAtZero: true,
+                        grid : {
+                          color : '#c9c5c5'
+                        },
+                            ticks :{
+                              color : 'black'
+                            },
+                            title: {
+                                  display: true,
+                                  text: 'Mesures contre les changements climatiques'
+                              }
+                      },
+                      x:{
+                        grid : {
+                          color : '#c9c5c5'
+                        },
+                        ticks :{
+                              color : 'black'
+                            },
+                            title: {
+                                  display: true,
+                                  text: 'Transports durables/ Tri et recyclage des déchets'
+                              }
+                      }
+                      
+                      
+                  },
+              title: {
+                  display: true,
+              }
+          }
+      });
+  }
+</script>
+
+
+<script>
+    // Fetch data from the Flask endpoint
+    fetch('/doughnut')
+        .then(response => response.json())
+        .then(data => {
+            // Extract doughnut chart data
+            const doughnutData = JSON.parse(data.doughnut_data_json);
+
+            // Prepare data for Chart.js
+            const labels = doughnutData.map(item => item['Connaissance']);
+            const dataValues = doughnutData.map(item => item['Count']);
+
+            const ctx = document.getElementById('doughnut-chart').getContext('2d');
+            const doughnutChart = new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Connaissance des politiques gouvernementales',
+                        data: dataValues,
+                        backgroundColor: ['#EF4444', '#0EA5E9', '#A855F7'],
+                        borderColor: ['#EF4444', '#0EA5E9', '#A855F7'],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    title: {
+                        display: true,
+                        text: 'Connaissance des politiques gouvernementales'
+                    }
+                }
+            });
+        })
+        .catch(error => console.error('Error fetching data:', error));
+</script>
+
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+      // Fetch data from the Flask endpoint
+      fetch('/bar_data')
+          .then(response => response.json())
+          .then(data => {
+              const barData = JSON.parse(data.bar_data_json);
+              
+              // Extract labels (cities) and counts
+              const labels = barData.map(item => item.Ville);
+              const counts = barData.map(item => item.Count);
+
+              // Create a new bar chart
+              const ctx = document.getElementById('myBarChart').getContext('2d');
+              const myBarChart = new Chart(ctx, {
+                  type: 'bar',
+                  data: {
+                      labels: labels,
+                      datasets: [{
+                          label: 'Nombre de participations (Oui)',
+                          data: counts,
+                          backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                          borderColor: 'rgba(75, 192, 192, 1)',
+                          borderWidth: 1
+                      }]
+                  },
+                  options: {
+                      indexAxis: 'y', // This makes the chart horizontal
+                      scales: {
+                          x: {
+                              title: {
+                                  display: true,
+                                  text: 'Count'
+                              }
+                          },
+                          y: {
+                              title: {
+                                  display: true,
+                              }
+                          }
+                      },
+                      responsive: true,
+                      maintainAspectRatio: false
+                  }
+              });
+          })
+          .catch(error => console.error('Error fetching data:', error));
+  });
+</script>
+<script type="text/javascript">
+  /* Make dynamic date appear */
+  (function () {
+    if (document.getElementById("get-current-year")) {
+      document.getElementById("get-current-year").innerHTML =
+        new Date().getFullYear();
+    }
+  })();
+  /* Sidebar - Side navigation menu on mobile/responsive mode */
+  function toggleNavbar(collapseID) {
+    document.getElementById(collapseID).classList.toggle("hidden");
+    document.getElementById(collapseID).classList.toggle("bg-white");
+    document.getElementById(collapseID).classList.toggle("m-2");
+    document.getElementById(collapseID).classList.toggle("py-3");
+    document.getElementById(collapseID).classList.toggle("px-6");
+  }
+  /* Function for dropdowns */
+  function openDropdown(event, dropdownID) {
+    let element = event.target;
+    while (element.nodeName !== "A") {
+      element = element.parentNode;
+    }
+    Popper.createPopper(element, document.getElementById(dropdownID), {
+      placement: "bottom-start"
+    });
+    document.getElementById(dropdownID).classList.toggle("hidden");
+    document.getElementById(dropdownID).classList.toggle("block");
+  }
+</script>
+  </body>
+</html>

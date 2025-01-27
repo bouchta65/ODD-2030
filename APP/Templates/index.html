@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Un Guide pour un Développement Durable.</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="{{ url_for('static', filename='assets/img/logoOdd.png')}}" rel="icon">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/styles/tailwind.css') }}">
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500&family=Jost:wght@500;600;700&display=swap" rel="stylesheet"> 
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="{{ url_for('static', filename='assets/lib/animate/animate.min.css')}}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='assets/lib/owlcarousel/assets/owl.carousel.min.css')}}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='assets/lib/lightbox/css/lightbox.min.css')}}" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="{{ url_for('static', filename='assets/styles/bootstrap.min.css')}}" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="{{ url_for('static', filename='assets/styles/style.css')}}" rel="stylesheet">
+    <style>
+      html {
+          scroll-behavior: smooth;
+      }
+  </style>
+</head>
+
+<body>
+    <div class="container-xxl bg-white p-0">
+        <!-- Spinner Start -->
+        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+
+
+        <!-- Navbar & Hero Start -->
+        <div class="container-xxl position-relative p-0">
+            <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+                <a href="" class="navbar-brand p-0">
+                    <h4 class="m-0">Les Objectifs de Développement Durable</h4>
+                    <!-- <img src="img/logo.png" alt="Logo"> -->
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="fa fa-bars"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav mx-auto py-0">
+                        <a href="index.html" class="nav-item nav-link active"></a>
+                        <a href="#Definition" class="nav-item nav-link">Definition</a>
+                        <a href="#Enquête" class="nav-item nav-link">Enquête</a>
+                        <a href="#ODD" class="nav-item nav-link">ODD</a>
+                        <div class="nav-item dropdown">
+                            
+                        </div>
+                        <a href="#Contactez" class="nav-item nav-link">Contactez-nous</a>
+                    </div>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdQMmVFBzZcrapYnwMh-eE_PbHrwWa-dqncvIH-j48HtiEsRw/viewform?usp=sf_link" class="btn rounded-pill py-2 px-4 ms-3 d-none d-lg-block"><i class="fab fa-google"></i> Questionnaire des odd</a>
+                </div>
+            </nav>
+
+            <div class="container-xxl bg-primary hero-header">
+                <div class="container px-lg-5">
+                    <div class="row g-5 align-items-end">
+                        <div class="col-lg-6 text-center text-lg-start">
+                            <h1 class="text-white mb-4 animated slideInDown">Agenda 2030 : Un Guide pour un Développement Durable.</h1>
+                            <p class="text-white pb-3 animated slideInDown">Bienvenue sur "Agenda 2030" : Un Guide pour un Développement Durable". Ce site est une fenêtre ouverte sur l'analyse des Objectifs de Développement Durable (ODD) dans la région de Laâyoune-Sakia El Hamra. Implantée au sein du Sahara occidental, cette région nous 
+                                invite à explorer ses défis locaux et à concevoir ensemble des solutions pour un avenir solide et prospère.</p>
+                            <a href="{{ url_for('login') }}" class="btn btn-secondary py-sm-3 px-sm-5 rounded-pill me-3 animated slideInLeft">Login</a>
+                            <a href="#Contactez" class="btn btn-light py-sm-3 px-sm-5 rounded-pill animated slideInRight">Contactez-nous</a>
+                        </div>
+                        <div class="col-lg-6 text-center text-lg-start">
+                            <img class="img-fluid animated zoomIn" src="{{ url_for('static', filename='assets/img/logoOdd.png')}}" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Navbar & Hero End -->
+
+
+        <div class="container-xxl py-5">
+            <div class="container py-5 px-lg-5">
+                <div class="row g-4">
+                    <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="feature-item bg-light rounded text-center p-4">
+                            <i class="fa fa-3x fa-mail-bulk text-primary mb-4"></i>
+                            <h5 class="mb-3">Éducation de Qualité</h5>
+                            <p class="m-0">Assurer l'accès de tous à une éducation de qualité, sur un pied d'égalité, et promouvoir les possibilités d'apprentissage tout au long de la vie.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="feature-item bg-light rounded text-center p-4">
+                            <i class="fa fa-3x fa-water text-primary mb-4"></i>
+                            <h5 class="mb-3">Eau Propre et Assainissement</h5>
+                            <p class="m-0">Garantir l'accès de tous à l'eau et à l'assainissement et gérer durablement les ressources en eau.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="feature-item bg-light rounded text-center p-4">
+                            <i class="fa fa-3x fa-wind text-primary mb-4"></i>
+                            <h5 class="mb-3">Énergie Propre et d'un Coût Abordable</h5>
+                            <p class="m-0">Garantir l'accès de tous à des services énergétiques fiables, durables et modernes, à un coût abordable.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Feature End -->
+
+
+        <!-- About Start -->
+        <div class="container-xxl py-5" id="Definition">
+            <div class="container py-5 px-lg-5">
+                <div class="row g-5 align-items-center">
+                    <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <p class="section-title text-secondary"> À PROPOS DE NOUS<span></span></p>
+                        <h1 class="mb-5">Qu’est-ce que les Objectifs de développement durable ?.</h1>
+                        <p class="mb-4">Les Objectifs de développement durable (ODD), également nommés Objectifs mondiaux, ont été adoptés par les Nations Unies en 2015. Ils sont un appel mondial à agir pour éradiquer la pauvreté, protéger la Planète et faire en sorte que tous les êtres humains vivent dans la paix et la prospérité d’ici à 2030. <br>
+
+                            Les 17 ODD sont intégrés - reconnaissant que les interventions dans un domaine affecteront les résultats dans d'autres et que le développement doit équilibrer les aspects sociaux, économiques et environnementaux.</p>
+                        <div class="skill mb-4">
+                            <div class="d-flex justify-content-between">
+                                <p class="mb-2">Pas de pauvreté:</p>
+                                <p class="mb-2">85%</p>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar bg-primary" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                        <div class="skill mb-4">
+                            <div class="d-flex justify-content-between">
+                                <p class="mb-2">Faim "zéro"</p>
+                                <p class="mb-2">90%</p>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar bg-secondary" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                        <div class="skill mb-4">
+                            <div class="d-flex justify-content-between">
+                                <p class="mb-2">Bonne santé et bien-être:</p>
+                                <p class="mb-2">95%</p>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar bg-dark" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                        <a href="" class="btn btn-primary py-sm-3 px-sm-5 rounded-pill mt-3"> En savoir plus</a>
+                    </div>
+                    <div class="col-lg-6">
+                        <img class="img-fluid wow zoomIn" data-wow-delay="0.5s" src="{{ url_for('static', filename='assets/img/about.png')}}">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- About End -->
+
+
+        <!-- Facts Start -->
+  
+        <!-- Facts End -->
+
+
+        <!-- Service Start -->
+        <div class="container-xxl py-5" id="ODD">
+            <div class="container py-5 px-lg-5">
+                <div class="wow fadeInUp" data-wow-delay="0.1s">
+                    <p class="section-title text-secondary justify-content-center"><span></span>Les ODD<span></span></p>
+                    <h1 class="text-center mb-5">Les Objectifs de Développement Durable</h1>
+                </div>
+                <div class="row g-4">
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="service-item d-flex flex-column text-center rounded">
+                            <div class="service-icon flex-shrink-0">
+                                <img src="{{ url_for('static', filename='assets/img/13.png')}}" alt="" width="100px" height="100px">
+                            </div>
+                            <h5 class="mb-3">Action pour le climat</h5>
+                            <p class="m-0"> L'ODD 13 vise à prendre des mesures urgentes pour lutter contre le changement climatique et ses impacts, en renforçant la résilience et en adaptant les sociétés aux phénomènes météorologiques extrêmes.</p>
+                            <a class="btn btn-square" href=""><i class="fa fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="service-item d-flex flex-column text-center rounded">
+                            <div class="service-icon flex-shrink-0">
+                                <img src="{{ url_for('static', filename='assets/img/14.png')}}" alt="" width="100px" height="100px">
+                            </div>
+                            <h5 class="mb-3">Vie aquatique </h5>
+                            <p class="m-0"> L'ODD 14 cherche à conserver et à exploiter de manière durable les océans, les mers et les ressources marines pour le développement durable, en protégeant la biodiversité marine et en régulant la surpêche.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                            <a class="btn btn-square" href=""><i class="fa fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="service-item d-flex flex-column text-center rounded">
+                            <div class="service-icon flex-shrink-0">
+                                <img src="{{ url_for('static', filename='assets/img/15.png')}}" alt="" width="100px" height="100px">
+                            </div>
+                            <h5 class="mb-3">Vie terrestre</h5>
+                            <p class="m-0">L'ODD 15 vise à protéger, restaurer et promouvoir une utilisation durable des écosystèmes terrestres, à lutter contre la déforestation, à mettre fin à la perte de biodiversité et à prendre des mesures pour lutter contre la désertification.</p>
+                            <a class="btn btn-square" href=""><i class="fa fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="service-item d-flex flex-column text-center rounded">
+                            <div class="service-icon flex-shrink-0">
+                                <img src="{{ url_for('static', filename='assets/img/16.png')}}" alt="" width="100px" height="100px">
+                            </div>
+                            <h5 class="mb-3">Paix, justice et institutions efficaces </h5>
+                            <p class="m-0"> L'ODD 16 cherche à promouvoir des sociétés pacifiques et inclusives, à garantir l'accès à la justice pour tous, à renforcer les institutions efficaces, responsables et transparentes, et à réduire la violence sous toutes ses formes.</p>
+                            <a class="btn btn-square" href=""><i class="fa fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="service-item d-flex flex-column text-center rounded">
+                            <img src="{{ url_for('static', filename='assets/img/unnamed (3).jpg')}}" alt="">
+
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="service-item d-flex flex-column text-center rounded">
+                            <div class="service-icon flex-shrink-0">
+                                <img src="{{ url_for('static', filename='assets/img/17.png')}}" alt="" width="100px" height="100px">
+                            </div>
+                            <h5 class="mb-3">Partenariats pour la réalisation des objectifs</h5>
+                            <p class="m-0">L'ODD 17 encourage la coopération internationale, le partenariat public-privé et le partage des connaissances pour soutenir la mise en œuvre efficace des ODD, en mobilisant les ressources financières, technologiques et humaines .</p>
+                            <a class="btn btn-square" href=""><i class="fa fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                  
+                </div>
+            </div>
+        </div>
+        <!-- Service End -->
+
+        <section class="" id="Enquête">
+
+          <div class="">
+            <div class="flex flex-wrap items-center">
+              <div class="w-full md:w-4/12 px-12 md:px-4 ml-auto mr-auto ">
+                <div
+                  class="text-blueGray-500 p-3 text-center inline-flex items-center justify-center w-16 h-16 mb-6 shadow-lg rounded-full bg-white"
+                >
+                  <i class="fas fa-sitemap text-xl"></i>
+                </div>
+                <h3 class="text-3xl mb-2 font-semibold leading-normal">
+                  Enquête sur les Objectifs de Développement Durable (ODD) : Vers un Avenir Durable à "Laâyoune-Sakia El Hamra"
+                </h3>
+                <p
+                  class="text-lg font-light leading-relaxed mt-4 mb-4 text-blueGray-600"
+                >
+                une enquête approfondie sur la mise en œuvre des objectifs de développement
+                 durable (ODD) dans la région de Laâyoune-Sakia El Hamra. Cette enquête visait 
+                 à évaluer les progrès réalisés dans la réalisation des ODD dans notre région,
+                  ainsi qu'à identifier les défis et les opportunités pour un développement durable.
+                </p>
+                <div class="block pb-6">
+                  <span
+                    class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-blueGray-500 bg-white uppercase last:mr-0 mr-2 mt-2"
+                  >
+                  Laâyoune
+                  </span>
+                  <span
+                    class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-blueGray-500 bg-white uppercase last:mr-0 mr-2 mt-2"
+                  >
+                  Boujdour
+                  </span>
+                  <span
+                    class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-blueGray-500 bg-white uppercase last:mr-0 mr-2 mt-2"
+                  >
+                  Tarfaya 
+                  </span>
+                  <span
+                    class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-blueGray-500 bg-white uppercase last:mr-0 mr-2 mt-2"
+                  >
+                  Es-Semara
+                  </span>
+               
+            
+                </div>
+                <a
+                  href="https://www.hcp.ma/region-laayoune/m/"
+                  target="_blank"
+                  class="font-bold text-blueGray-700 hover:text-blueGray-500 ease-linear transition-all duration-150"
+                >
+                Voir Plus
+                  <i class="fa fa-angle-double-right ml-1 leading-relaxed"></i>
+                </a>
+              </div>
+    
+              <div class="w-full md:w-5/12 px-4 mr-auto ml-auto mt-32">
+                <div
+                  class="relative flex flex-col min-w-0 w-full mb-6 mt-48 md:mt-0"
+                >
+                  <img
+                    alt="..."
+                    src="{{ url_for('static', filename='assets/img/drapeau-maroc-1.jpg')}}"
+                    class="w-full align-middle rounded absolute shadow-lg max-w-100-px left-145-px -top-29-px z-3"
+                  />
+                  <img
+                    alt="..."
+                    src="{{ url_for('static', filename='assets/img/laayoun1.jpg')}}"
+                    class="w-full align-middle rounded-lg absolute shadow-lg max-w-210-px left-260-px -top-160-px"
+                  />
+                  <img
+                    alt="..."
+                    src="{{ url_for('static', filename='assets/img/Layounn.png')}}"
+                    class="w-full align-middle rounded-lg absolute shadow-lg max-w-180-px left-40-px -top-225-px z-2"
+                  />
+                  <img
+                    alt="..."
+                    src="{{ url_for('static', filename='assets/img/tarfaya.jpg')}}"
+                    class="w-full align-middle rounded-lg absolute shadow-2xl max-w-200-px -left-50-px top-25-px"
+                  />
+             
+                  <img
+                    alt="..."
+                    src="{{ url_for('static', filename='assets/img/jamal.jpg')}}"
+                    class="w-full align-middle rounded absolute shadow-xl max-w-120-px left-195-px top-95-px"
+                  />
+                </div>
+              </div>
+            </div>
+    
+         
+          </div>
+    
+         
+    
+         
+        </section>
+        <!-- Newsletter Start -->
+        <div class="container-xxl bg-primary newsletter py-5 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="container py-5 px-lg-5">
+                <div class="row justify-content-center">
+                    <div class="col-lg-7 text-center">
+                        <p class="section-title text-white justify-content-center"><span></span>s'il te plaît<span></span></p>
+                        <h1 class="text-center text-white mb-4">Nous avons besoin de votre aide</h1>
+                        <p class="text-white mb-4">Votre participation à cette collecte de données est cruciale pour comprendre les besoins spécifiques de notre communauté et pour orienter nos efforts vers un développement plus durable et inclusif. </p>
+                        <div class="position-relative w-100 mt-3">
+                                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdQMmVFBzZcrapYnwMh-eE_PbHrwWa-dqncvIH-j48HtiEsRw/viewform?usp=sf_link" class="button-link">
+                                    <input class="form-control border-0 rounded-pill w-100 ps-4 pe-5" src="" type="button" value="Questionnaire des odd" placeholder="Enter Your Email" style="height: 48px;">
+                                    <button type="button" class="btn shadow-none position-absolute top-0 end-0 mt-1 me-2"><i class="fa fa-paper-plane text-primary fs-4"></i>
+                                </a>
+                            </button>
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Newsletter End -->
+        
+
+
+        
+
+        <!-- Footer Start -->
+        <div id="Contactez" class="container-fluid bg-primary text-light footer wow fadeIn" data-wow-delay="0.1s">
+            <div class="container py-5 px-lg-5">
+                <div class="row g-5">
+                    <div class="col-md-6 col-lg-3">
+                        <p class="section-title text-white h5 mb-4">Address<span></span></p>
+                        <p><i class="fa fa-map-marker-alt me-3"></i>BP. 441 Route de Smara, Laayoune</p>
+                        <p><i class="fa fa-phone-alt me-3"></i>05 28 89 29 02</p>
+                        <p><i class="fa fa-envelope me-3"></i>hcplaayoune@gmail.com</p>
+                        <div class="d-flex pt-2">
+                            <a class="btn btn-outline-light btn-social" href="
+                            https://fr.linkedin.com/company/hcp-maroc"><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-outline-light btn-social" href="
+                            https://fr.linkedin.com/company/hcp-maroc"><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-outline-light btn-social" href="
+                            https://fr.linkedin.com/company/hcp-maroc"><i class="fab fa-instagram"></i></a>
+                            <a class="btn btn-outline-light btn-social" href="
+                            https://fr.linkedin.com/company/hcp-maroc"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <p class="section-title text-white h5 mb-4"> LIEN RAPIDE<span></span></p>
+                        <a id="Definition" class="btn btn-link" href="">Definition</a>
+                        <a id="Enquête" class="btn btn-link" href="">Enquête</a>
+                        <a class="btn btn-link" href="">ODD </a>
+                        <a class="btn btn-link" href="">Contactez-nous</a>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <p class="section-title text-white h5 mb-4">ODD<span></span></p>
+                        <div class="row g-2">
+                            
+                                <img class="img-fluid" src="{{ url_for('static', filename='assets/img/1.png')}}" alt="Image">
+                           
+                            
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <p class="section-title text-white h5 mb-4">À PROPOS DE NOUS<span></span></p>
+                        <p>Un Guide pour un Développement Durable". Ce site est une fenêtre ouverte sur l'analyse des Objectifs de Développement Durable (ODD) dans la région de Laâyoune-Sakia El Hamra.</p>
+                        <div class="position-relative w-100 mt-3">
+                            <input class="form-control border-0 rounded-pill w-100 ps-4 pe-5" type="text" placeholder="Your Email" style="height: 48px;">
+                            <button type="button" class="btn shadow-none position-absolute top-0 end-0 mt-1 me-2"><i class="fa fa-paper-plane text-primary fs-4"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container px-lg-5">
+                <div class="copyright">
+                    <div class="row">
+                        <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                            &copy; <a class="border-bottom" href="https://www.hcp.ma/region-laayoune/">Direction Régionale de Laayoune Sakia-El Hamra
+                              </a>
+<br>
+							<!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+							Powered By <a class="border-bottom" href="https://ma.linkedin.com/in/mohamed-bouchta-71082a286?trk=public_profile_samename-profile">Bouchta Mohamed</a>
+                        </div>
+                        <div class="col-md-6 text-center text-md-end">
+                            <div class="footer-menu">
+                                <a id="Definition" href="">Definition</a>
+                                <a href="">Enquête</a>
+                                <a id="Definition" href="">ODD</a>
+                                <a href="">Contactez-nous</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End -->
+
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-lg btn-secondary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='assets/lib/wow/wow.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='assets/lib/easing/easing.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='assets/lib/waypoints/waypoints.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='assets/lib/counterup/counterup.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='assets/lib/owlcarousel/owl.carousel.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='assets/lib/isotope/isotope.pkgd.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='assets/lib/lightbox/js/lightbox.min.js')}}"></script>
+
+    <!-- Template Javascript -->
+    <script src="{{ url_for('static', filename='assets/js/main.js')}}"></script>
+</body>
+
+</html>
