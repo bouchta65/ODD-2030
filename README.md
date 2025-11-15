@@ -25,3 +25,4 @@ Le projet inclut :
 - **Bibliothèques Python :** Pandas, NumPy, Matplotlib, Seaborn
 - **Visualisation des données en JavaScript :** Chart.js
 - **Outils :** Google Forms, Google Sheets
+  
